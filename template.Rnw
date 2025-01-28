@@ -126,6 +126,40 @@ Below, we show we can produce the code without evaluating it.
 8*(9-5)+9 #8(x-5)+x for x=9
 ## [1] 41
 @
+
+Alternatively, we can produce the output without the code.
+<<echo=FALSE, size="scriptsize">>=
+8*(9-5)+9 #8(x-5)+x for x=9
+@
+
+We can also call object values from R directly.
+<<size="scriptsize">>=
+result <- 8*(9-5)+0 #8(x-5)+x for x=9
+result.with.error <- result + rnorm(1,mean=0,sd=0.1)
+result.with.error
+@
+\subsection{Plotting}
+We can also plot with R.
+<<size="scriptsize">>=
+#Plot a histogram of random exponential data
+hist(rexp(100))
+@
+Figure 1: A histogram of random exponentially distributed data, n=100
+\subsection{Tables}
+Below, we load and take a peek at some data about the death rates per 1000 in Virginia in 1940 (Molyneaux et al., 1947).
+<<size="scriptsize">>=
+data("VADeaths")
+head(VADeaths) #take a peek of the data
+@
+\indent If we want to print this nicely, we can do so using the xtable packagr (Dahl et al., 2019), which we can refrence using the label (Table 1).
+<<results="asis",size="scriptsize">>=
+library(xtable)
+colnames(VADeaths)<-c("Rural Male","Rural Female","Urban Male","Rural Female")
+VADeaths.table<-xtable(VADeaths,label = "VADeaths.tab")
+print(VADeaths.table,
+table.placement = "H", include.rownames=FALSE, size = "small")
+@
+\indent Table 1: Death Rates per 1000 in Virginia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
