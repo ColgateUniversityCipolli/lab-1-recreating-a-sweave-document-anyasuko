@@ -211,7 +211,7 @@ We can also call object values from R directly.
 \hldef{result.with.error}
 \end{alltt}
 \begin{verbatim}
-## [1] 32.00169
+## [1] 32.26161
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -255,7 +255,7 @@ Below, we load and take a peek at some data about the death rates per 1000 in Vi
 \hlkwc{table.placement} \hldef{=} \hlsng{"H"}\hldef{,} \hlkwc{include.rownames}\hldef{=}\hlnum{FALSE}\hldef{,} \hlkwc{size} \hldef{=} \hlsng{"small"}\hldef{)}
 \end{alltt}
 \end{kframe}% latex table generated in R 4.4.2 by xtable 1.8-4 package
-% Wed Jan 29 12:57:27 2025
+% Wed Jan 29 17:19:25 2025
 \begin{table}[H]
 \centering
 \begingroup\small
@@ -275,6 +275,33 @@ Rural Male & Rural Female & Urban Male & Rural Female \\
 \end{table}
 
 \indent Table 1: Death Rates per 1000 in Virginia
+\section{Refrences}
+@Manual{xtable,
+    title = {xtable: Export Tables to LaTeX or HTML},
+    author = {David B. Dahl and David Scott and Charles Roosen and Arni Magnusson and Jonathan Swinton},
+    year = {2019},
+    note = {R package version 1.8-4},
+    url = {https://CRAN.R-project.org/package=xtable},
+  }
+@article{horst2022palmer,
+  title={Palmer Archipelago Penguins Data in the palmerpenguins R Package-An Alternative to Anderson's Irises.}
+  author={Horst, Allison M and Hill, Alison Presmanes and Gorman, Kristen B},
+  journal={R Journal},
+  volume={14},
+  number={1},
+  year={2022}
+  }
+@article{molyneaux1947differences,
+  title={Differences in Virginia death rates by color, sex, age and rural or urban residence},
+  author={Molyneaux, Lambert and Gilliam, Sara K and Florant, LC},
+  journal={American Sociological Review},
+  volume={12},
+  number={5},
+  pages={525--535},
+  year={1947},
+  publisher={JSTOR}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendix
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,23 +309,23 @@ Rural Male & Rural Female & Urban Male & Rural Female \\
 \onecolumn
 \section{Appendix}
 Below is a table from a paper I’m currently working on. Without the analysis object in R, I have to create this table myself.
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{| l | l | r | r | r | r |}\hline
-& \multicolumn{2}{|c|}{Term} & \multicolumn{2}{|c|}{SS (Type III)} &
-\multicolumn{2}{|c|}{df} & \multicolumn{2}{|c|}{F} & \multicolumn{2}{|c}{p-value} & \multicolumn{2}{|c}{E^2p}\\\hline
-(intercept) &4.95 &1.00 &5.37 &0.0209 &\\
-White-Poor(Z) &3.17 &1.00 &3.44 &0.0642\\
-Zero-Sum (Z) &17.96 &1.00 &19.48 & <0.0001 & 0.03\\
-Education (Z) &0.39 &1.00 &0.42 &0.5161 &0.00\\
-Income (Z) &0.16 &1.00 &0.17 &0.6817 &0.00\\
-Democrat &9.60 &1.00 &10.42 &0.0013 &0.02\\
-Black-Poor (Z) &1.92 &1.00 &2.18 &0.1496 &0.00\\
-White-Poor(Z) x Zero-Sum(Z) &7.96 &1.00 &8.63 &0.0034 &0.01\\
-Residuals &506.92 &550.00\\\hline
-\end{tabular} \label{paper.tab}
-\end{center}
-\end{table}
+% \begin{table}[H]
+% \begin{center}
+% \begin{tabular}{| l | r | r | r | r | r |}\hline
+% & \multicolumn{2}{|c|}{Term} & \multicolumn{2}{|c|}{SS (Type III)} &
+% \multicolumn{2}{|c|}{df} & \multicolumn{2}{|c|}{F} & \multicolumn{2}{|c}{p-value} & \multicolumn{2}{|c}{E^2p}\\\hline
+% (intercept) &4.95 &1.00 &5.37 &0.0209 &\\
+% White-Poor(Z) &3.17 &1.00 &3.44 &0.0642\\
+% Zero-Sum (Z) &17.96 &1.00 &19.48 & <0.0001 & 0.03\\
+% Education (Z) &0.39 &1.00 &0.42 &0.5161 &0.00\\
+% Income (Z) &0.16 &1.00 &0.17 &0.6817 &0.00\\
+% Democrat &9.60 &1.00 &10.42 &0.0013 &0.02\\
+% Black-Poor (Z) &1.92 &1.00 &2.18 &0.1496 &0.00\\
+% White-Poor(Z) x Zero-Sum(Z) &7.96 &1.00 &8.63 &0.0034 &0.01\\
+% Residuals &506.92 &550.00\\\hline
+% \end{tabular} \label{paper.tab}
+% \end{center}
+% \end{table}
 \indent The \texttt{palmerpenguins} package for R(Horst et al., 2020) provides data on adult foraging penguins near Palmer station, Antarctica. Figure 2 is too big to fit nicely in our column based template above, so I've placed it here in the abstract by saving it and presenting it scaled to 0.75.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
