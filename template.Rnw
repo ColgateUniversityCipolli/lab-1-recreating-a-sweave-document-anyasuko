@@ -161,6 +161,29 @@ table.placement = "H", include.rownames=FALSE, size = "small")
 @
 \indent Table 1: Death Rates per 1000 in Virginia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\onecolumn
+\section{Appendix}
+Below is a table from a paper I’m currently working on. Without the analysis object in R, I have to create this table myself.
+
+\indent The \texttt{palmerpenguins} package for R(Horst et al., 2020) provides data on adult foraging penguins near Palmer station, Antarctica. Figure 2 is too big to fit nicely in our column based template above, so I've placed it here in the abstract by saving it and presenting it scaled to 0.75.
+<<>>=
+library(palmerpenguins)
+pdf("figure/penguins.pdf", width=8,height=5)
+plot(penguins)
+dev.off()
+#code to print the table:
+\begin{figure}[penguins]
+\begin{center}
+\includegraphics[scale=0.8]{figure/palmerpenguins.pdf}
+\caption{Figure 2: Data on adult foraging penguins near Palmer Station, Antarctica., $n=200$.}
+\label{plot3}
+\end{center}
+\end{figure}
+@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{2em}
@@ -172,14 +195,5 @@ you cite them in your document, the bibliography section will automatically popu
 \bibliography{bib}
 \end{tiny}
 \end{multicols}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Appendix
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\onecolumn
-\section{Appendix}
-
-If you have anything extra, you can add it here in the appendix. This can include images or tables that don't work well in the two-page setup, code snippets you might want to share, etc.
 
 \end{document}
